@@ -75,8 +75,8 @@ class SignalProcessor:
             Tuple of (start indices, end indices)
         """
         _, properties = signal.find_peaks(vgrf, **self.config.vgrf_peak_params)
-        print("left_bases:", properties['left_bases'])
-        print("right_bases:", properties['right_bases'])
+        # print("left_bases:", properties['left_bases'])
+        # print("right_bases:", properties['right_bases'])
 
         return properties['left_bases'], properties['right_bases']
 class StanceProcessor:
@@ -161,7 +161,7 @@ class StanceAnalyzer:
         #]
 
         stances = [self.stance_processor.normalize_stance(slice) for slice in waist_slices]
-        print(waist_slices)
+        # print(waist_slices)
         return refined_strike_indices, stances
 
     def extract_treadmill_stances(self, vgrf: pd.Series) -> Tuple[List[int], List[pd.Series]]:
@@ -200,6 +200,8 @@ class StanceAnalyzer:
         accel_strikes, accel_stances = self.extract_sensor_stances(
             leg_accel, leg_accel_unfiltered, waist_accel
         )
+        print("ACCEL STRIKES:", accel_strikes)
+        print("ACCEL STANCES:", accel_stances)
         #start_idx, accel_stances = self.extract_sensor_stances(
         #    leg_accel, leg_accel_unfiltered, waist_accel, start_idx
         #)
@@ -208,6 +210,8 @@ class StanceAnalyzer:
             raise ValueError(f"Number of strikes ({len(accel_strikes)}) != number of stances ({len(accel_stances)}) in accel data")
 
         vgrf_strikes, vgrf_stances = self.extract_treadmill_stances(vgrf)
+        print("VGRF STRIKES:", vgrf_strikes)
+        print("VGRF STANCES:", vgrf_stances)
         if len(vgrf_strikes) != len(vgrf_stances):
             raise ValueError(f"Number of strikes ({len(vgrf_strikes)}) != number of stances ({len(vgrf_stances)}) in vgrf data")
 

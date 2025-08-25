@@ -32,6 +32,7 @@ def visually_align_signal(signal1: pd.Series, signal2: pd.Series, default_start1
     
     # Get the windowed portions of the signals
     sig1_window = sig1[initial_start:initial_end]
+
     sig2_window = sig2[initial_start:initial_end]
     
     # Create initial figure
@@ -64,9 +65,9 @@ def visually_align_signal(signal1: pd.Series, signal2: pd.Series, default_start1
         yaxis_title="Value",
         legend=dict(
             x=0.98,
-            y=0.02,
+            y=0.98,
             xanchor='right',
-            yanchor='bottom',
+            yanchor='top',
             bgcolor='rgba(255, 255, 255, 0.8)',
             bordercolor='#2C3E50',
             borderwidth=1
@@ -195,8 +196,8 @@ def visually_align_signal(signal1: pd.Series, signal2: pd.Series, default_start1
                     y=sig2_window[mask],
                     mode='lines',
                     name='vgrf (shifted)',
-                    line=dict(color='#E67E22', width=1, dash='dot'),
-                    opacity=0.5
+                    line=dict(color='#E67E22', width=3, dash='dot'),
+                    opacity=1
                 ))
 
         # Add offset annotation in the upper middle of the screen
@@ -235,9 +236,9 @@ def visually_align_signal(signal1: pd.Series, signal2: pd.Series, default_start1
             yaxis_title="Value",
             legend=dict(
                 x=0.98,
-                y=0.02,
+                y=0.98,
                 xanchor='right',
-                yanchor='bottom',
+                yanchor='top',
                 bgcolor='rgba(255, 255, 255, 0.8)',
                 bordercolor='#2C3E50',
                 borderwidth=1

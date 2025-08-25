@@ -1,0 +1,6 @@
+pyproject.toml
+unc_applied_biomech.egg-info/PKG-INFO
+unc_applied_biomech.egg-info/SOURCES.txt
+unc_applied_biomech.egg-info/dependency_links.txt
+unc_applied_biomech.egg-info/requires.txt
+unc_applied_biomech.egg-info/top_level.txt
