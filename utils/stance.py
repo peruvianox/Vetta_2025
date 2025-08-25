@@ -79,6 +79,8 @@ class SignalProcessor:
         # print("right_bases:", properties['right_bases'])
 
         return properties['left_bases'], properties['right_bases']
+    
+
 class StanceProcessor:
     """Processes and normalizes stance phases."""
     
@@ -122,6 +124,7 @@ class StanceProcessor:
             if np.mean(window) < threshold:
                 return None
         return stance
+
 
 class StanceAnalyzer:
     """Main class for analyzing and matching stances."""
@@ -251,6 +254,7 @@ class StanceAnalyzer:
             'matched_stances': matched_stances
         }
         return matched_strikes, matched_stances, debug
+
 
 # For backward compatibility
 def parse_and_match_stances(

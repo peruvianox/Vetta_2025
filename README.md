@@ -39,7 +39,7 @@ The project assumes subjects is organized as follows:
 
 ```
 subjects/
-        ├── troy-barnes/
+        ├── johndoe/
         │   ├── info.json
         │   └── trials/
         │       ├── trial-1/
@@ -48,9 +48,9 @@ subjects/
         │       │   └── stances/   <--- Produced by process-trial.ipynb
         │       ├── trial-2/
         │       └── trial-3/
-        ├── abed-nadir/
+        ├── janedoe/
         │   └── ...
-        └── jeff-winger/
+        └── jimmydoe/
             └── ...
 ```
 
